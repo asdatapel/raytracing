@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(${PROJECT_SOURCE_DIR})
 
-set(SOURCE_FILES main.cpp World.cpp Renderer.cpp MathHelper.cpp Ray.cpp Quaternion.cpp Quaternion.h Objects/Box.cpp Objects/Box.h)
-LIST(APPEND SOURCE_FILES Shapes/Shape.cpp Shapes/Sphere.cpp Shapes/Triangle.cpp Objects/Object.cpp Objects/Wall.cpp)
+set(SOURCE_FILES main.cpp World.cpp Renderer.cpp MathHelper.cpp Ray.cpp Quaternion.cpp Quaternion.h Objects/Box.cpp Objects/Box.h Objects/Wall.cpp Objects/Wall.h)
+LIST(APPEND SOURCE_FILES Shapes/Shape.cpp Shapes/Sphere.cpp Shapes/Triangle.cpp Objects/Object.cpp Objects/Ball.cpp)
 
 include_directories(ext/glm)
 include_directories(ext/glew/include)

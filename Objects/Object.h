@@ -6,6 +6,7 @@
 #define RAYTRACING_ASDF_H
 
 #include <SFML/System.hpp>
+#include <ext/SFML/include/SFML/Graphics.hpp>
 
 #include "Ray.h"
 #include "Quaternion.h"
@@ -19,6 +20,8 @@ public:
 	sf::Vector3f _position;
 	Quaternion _rotation;
 	sf::Vector3f _velocity;
+
+	sf::Image _texture;
 };
 
 

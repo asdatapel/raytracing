@@ -23,6 +23,10 @@ std::pair<bool, float> Math::solveQuadratic(const float a, const float b, const 
 	return {true, x_low};
 }
 
+float Math::length(sf::Vector3f v){
+	return std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+}
+
 float Math::dot(const sf::Vector3f &v1, const sf::Vector3f &v2) {
 	return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
 }
@@ -40,4 +44,8 @@ sf::Vector3f Math::normalize(const sf::Vector3f &v) {
 
 sf::Vector3f Math::abs(const sf::Vector3f &v) {
 	return {std::fabs(v.x), std::fabs(v.y), std::fabs(v.z)};
+}
+
+sf::Color operator *(const float f, const sf::Color& c){
+	return {sf::Uint8 (f * c.r), sf::Uint8 (f * c.g), sf::Uint8 (f * c.b)};
 }

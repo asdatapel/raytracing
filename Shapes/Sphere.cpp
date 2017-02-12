@@ -23,6 +23,8 @@ std::pair<bool, RayCollision> Sphere::intersect(sf::Vector3f ray_origin, sf::Vec
 	collision.position = ray_origin + solved_t.second * ray_velocity;
 	collision.normal = Math::normalize(collision.position);
 
+	collision.texture_coords.x =  0.5f + std::atan2(collision.normal.x, collision.normal.z) / (2 * Math::Pi);
+	collision.texture_coords.y = 0.5f - std::asin(collision.normal.y) / Math::Pi;
 
 	return {true, collision};
 }

@@ -10,8 +10,9 @@
 #include <SFML/System.hpp>
 
 #include "Ray.h"
-#include "Objects/Object.h"
 #include "Objects/Box.h"
+#include "Objects/Wall.h"
+#include "Objects/Ball.h"
 
 
 class World {

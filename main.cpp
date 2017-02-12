@@ -12,12 +12,14 @@
 
 //#define TARGET_WIDTH 1920
 //#define TARGET_HEIGHT 1080
-#define TARGET_WIDTH 320
-#define TARGET_HEIGHT 180
+#define TARGET_WIDTH 640
+#define TARGET_HEIGHT 360
+//define TARGET_WIDTH 160
+//#define TARGET_HEIGHT 90
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Raytracing", sf::Style::Default);
-	window.setVerticalSyncEnabled(true);
+	//window.setVerticalSyncEnabled(true);
 
 	sf::Image image;
 	sf::Texture tex;
@@ -36,7 +38,7 @@ int main() {
 	world.init();
 	Renderer renderer;
 
-
+	int fileIndex = 0;
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -57,7 +59,11 @@ int main() {
 
 		image.create(TARGET_WIDTH, TARGET_HEIGHT, sf::Color::Cyan);
 		world.update();
+
 		renderer.drawWorld(&image, &world);
+		image.saveToFile("i" + std::to_string(fileIndex) + ".bmp");
+		std::cout << "File saved #" << fileIndex << "\n";
+		++fileIndex;
 
 		tex.update(image);
 		window.draw(sprite);

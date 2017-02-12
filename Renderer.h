@@ -12,10 +12,15 @@
 
 class Renderer {
 public:
+	Renderer();
+
 	void drawWorld (sf::Image* image, World* world);
 
 	sf::Vector3f camera_pos = {0,0,0};
 	float camera_distance = 0.5f;
+
+	sf::Image t;
+	bool t_loaded = false;
 
 };
 

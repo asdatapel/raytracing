@@ -8,12 +8,16 @@
 #include <cmath>
 
 #include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
 
 namespace Math {
+	static float Pi = 3.1415926535;
 
 	//solves quadratic function and return lower x
 	std::pair<bool, float> solveQuadratic(const float a, const float b, const float c);
 
+	//magnitude of vector
+	float length(sf::Vector3f v);
 	//dot product
 	float dot(const sf::Vector3f& v1, const sf::Vector3f& v2);
 	//cross product
@@ -22,7 +26,9 @@ namespace Math {
 	//convert vector to unit vector
 	sf::Vector3f normalize(const sf::Vector3f& v);
 	sf::Vector3f abs(const sf::Vector3f& v);
+
+	inline float toRadians(float d){return (d * Pi) / 180.0f;};
 }
 
-
+sf::Color operator *(const float f, const sf::Color& c);
 #endif //RAYTRACING_MATH_H

@@ -13,12 +13,14 @@
 
 class Triangle : public Shape {
 public:
-	Triangle(sf::Vector3f vertex1, sf::Vector3f vertex2, sf::Vector3f vertex3);
+	Triangle(sf::Vector3f vertex1, sf::Vector3f vertex2, sf::Vector3f vertex3, sf::Vector2f uv1, sf::Vector2f uv2, sf::Vector2f uv3);
 
 	//check if a ray collides and return the distance from the ray origin
 	std::pair<bool, RayCollision> intersect(sf::Vector3f ray_origin, sf::Vector3f ray_velocity);
 private:
 	sf::Vector3f _vertices[3];
+	sf::Vector2f _uv[3];
+
 	sf::Vector3f _normal;
 	float _distance_from_origin;
 };
